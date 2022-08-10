@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+ <p><%= link_to "New post", new_post_path %></p>
+  <!--<% @posts.each do |post| %> 
+    <div class="container d-flex">
+      <div class="card pt-3 ps-2" style="width: 220px; height:320px" id="posts">
+        <% if post.avatar.attached?%>
+          <img class="card-img-top"><%=image_tag post.avatar%>
+        <%end%>
+
+        <div class="card-body">
+            <h5 class="card-title text-center"><%=post.title%></h5>
+            <p class="text-center"><%= link_to "Leer mas", post%></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "New post", new_post_path %>-->
+    <div class="container">
+        <% @posts.each do |post| %>
+            <div class="row">
+              <div class="col-3">
+                <div class="card pt-3">
+                    <%=image_tag post.avatar%>
+                    <h4 class="pt-3"><%=post.title%></h4>
+                    <%=link_to "Leer Mas" ,post%>
+                </div>              
+              </div>        
+            </div>
+        <% end %>
+    </div>
+
+    
+
+
+
