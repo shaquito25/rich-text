@@ -2,6 +2,7 @@
 
 <h1>Posts</h1>
  <p><%= link_to "New post", new_post_path %></p>
+ 
   <!--<% @posts.each do |post| %> 
     <div class="container d-flex">
       <div class="card pt-3 ps-2" style="width: 220px; height:320px" id="posts">
@@ -18,19 +19,28 @@
   <% end %>
   <%= link_to "New post", new_post_path %>-->
     <div class="container">
+      <div class="row">
         <% @posts.each do |post| %>
-            <div class="row">
-              <div class="col-3">
+            
+              <div class="col-4 col-sm-6 col-md-3 col-lg-4">
                 <div class="card pt-3">
                     <%=image_tag post.avatar%>
                     <h4 class="pt-3"><%=post.title%></h4>
                     <%=link_to "Leer Mas" ,post%>
                 </div>              
               </div>        
-            </div>
+            
         <% end %>
+        </div>
     </div>
 
+    <div class="row justify-content-center">
+      <div class="col-10 col-sm-6 col-md-3 col-lg-2">
+        <%= paginate @posts %>
+      </div>
+    </div>
+
+    
     
 
 
